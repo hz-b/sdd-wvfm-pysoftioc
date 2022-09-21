@@ -1,6 +1,8 @@
 ## Trigger IOC
 
-This IOC connects to a remote raspberry pi which has been configured to allow remote access to it's GPIO pins. 
+This IOC connects to a remote raspberry pi which has been configured to allow remote access to it's GPIO pins. It is intended to send and recieve triggers to a Biologic SP300 Potentiostat, but it could be used for any triggering applications if modified.
+
+This script is to be run on some other machine than the rpi with the pins. It could be run locally on the pi, but developing on a pi is slow!
 
 To pins 17 and 18 a level shifter has been attached which converts the 3.3V from the pi to the 5V expected by the biologic. 
 
@@ -21,5 +23,12 @@ Pin 18 -> Output Pin (starts at 0)
 
 Output Trigger length = 100us, Trigger is from 0 -> 1 -> 0
 
+## Files
+
+| file |    Description | 
+|----------|-------------|
+| ioc.py |  python soft IOC which connects to the GPIO pins  | 
+| start_ioc.sh |  bash script to set the IP address of the remote rpi |  
+| biologic.bob | phoebus .bob display file |  
 
 
