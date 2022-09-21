@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Biologic Trigger</name>
+  <macros>
+    <P>SISSY2EX:BIOLOGIC</P>
+    <R>TRIGGER</R>
+  </macros>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle_1</name>
+    <width>300</width>
+    <height>220</height>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="Background" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <width>300</width>
+    <height>60</height>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="204" green="30" blue="96">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Biologic Trigger</text>
+    <x>40</x>
+    <width>230</width>
+    <height>60</height>
+    <font>
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="INVALID" red="255" green="0" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P):$(R):SEND</pv_name>
+        <value>1</value>
+        <description>Send Trigger</description>
+      </action>
+    </actions>
+    <pv_name>$(P):$(R):SEND</pv_name>
+    <x>26</x>
+    <y>161</y>
+    <width>124</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Running</text>
+    <x>186</x>
+    <y>158</y>
+    <width>60</width>
+    <height>30</height>
+    <foreground_color>
+      <color name="TitleDiagnostic" red="225" green="144" blue="21">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="INVALID" red="255" green="0" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0 == 1">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P):$(R):DONE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Slide Button_1</name>
+    <pv_name>$(P):$(R):OUTCOUNT</pv_name>
+    <x>166</x>
+    <y>95</y>
+    <width>99</width>
+    <height>30</height>
+    <background_color>
+      <color name="Info_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>0</precision>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Slide Button_2</name>
+    <pv_name>$(P):$(R):INCOUNT</pv_name>
+    <x>166</x>
+    <y>128</y>
+    <width>99</width>
+    <height>30</height>
+    <background_color>
+      <color name="Info_Background" red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <format>1</format>
+    <precision>0</precision>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Received Counter</text>
+    <x>26</x>
+    <y>128</y>
+    <width>140</width>
+    <height>30</height>
+    <background_color>
+      <color name="INVALID" red="255" green="0" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Sent Counter</text>
+    <x>26</x>
+    <y>98</y>
+    <width>140</width>
+    <height>30</height>
+    <background_color>
+      <color name="INVALID" red="255" green="0" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Ready</text>
+    <x>186</x>
+    <y>158</y>
+    <width>60</width>
+    <height>30</height>
+    <visible>false</visible>
+    <foreground_color>
+      <color name="On" red="0" green="255" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="INVALID" red="255" green="0" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="New Rule" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0 == 1">
+          <value>true</value>
+        </exp>
+        <pv_name>$(P):$(R):DONE</pv_name>
+      </rule>
+    </rules>
+  </widget>
+</display>
+
