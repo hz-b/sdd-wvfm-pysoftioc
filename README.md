@@ -15,6 +15,19 @@ The IOC uses the pigpio library to control the remote pins. Configuration of whi
 | SISSY2EX:BIOLOGIC:TRIGGER:INCOUNT | Increments by one every time we recieve a trigger on pin 17. You can monitor this PV to see the time that the trigger is received |  
 | SISSY2EX:BIOLOGIC:TRIGGER:OUTCOUNT | Increments by one every time we send a trigger on pin 18 using the $(P):$(R):SEND PV |  
 
+## Intended Use with Biologic
+
+0. Connect the trigger cable from the rPi to the potentiostat DSub9 connector
+1. Open the Biologic software of your choice (EC-Lab or EC-Lab express)
+2. Connect to the Potentiostat
+3. Configure your measurement technique or techniquies
+4. Add a trigger in (TI) method at the start of all of your techniques
+5. Add a trigger out (TO) method at the end of all your techniques
+6. Start your measurement, being sure to select a network drive (like //172.17.9.22/sambashare)
+7. Trigger the acquisition using measurement software (Bluesky)
+8. The measurement starts and runs
+9. The measurement ends and generates a trigger that is registered by this IOC
+10. The measurement software (Bluesky) reads the generated file and parses it so it is in the same format as all other data 
 
 ## Configuration
 
