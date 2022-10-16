@@ -10,7 +10,7 @@ from os.path import exists
 
 
 #Read from the save file:
-file_path = 'autosave.json'
+file_path = '/home/emil/Apps/autosave/SISSY2EX/SISSY2_SDD_ENERGY_00/autosave.json'
 if exists(file_path):
     with open(file_path) as json_file:
         autosave = json.load(json_file)
